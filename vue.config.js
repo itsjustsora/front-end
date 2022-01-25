@@ -8,6 +8,14 @@ module.exports = {
       }
     }
   },
+  configureWebpack: {
+    entry: {
+      app: './src/main.js',
+      style: [
+        'bootstrap/dist/css/bootstrap.min.css'
+      ]
+    }
+  },
   chainWebpack: config => {
     const svgRule = config.module.rule("svg")
     svgRule.uses.clear()
