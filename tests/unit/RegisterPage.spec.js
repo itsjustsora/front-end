@@ -66,7 +66,7 @@ describe('RegisterPage.vue', () => {
 
   it('should have form inputs bound with data model', () => {
     const username = 'sunny'
-    const emailAddress = 'sunny@local'
+    const emailAddress = 'sunny@taskagile.com'
     const password = 'VueJsRocks!'
 
     wrapper.vm.form.username = username
@@ -90,7 +90,7 @@ describe('RegisterPage.vue', () => {
     const stub = jest.fn()
     wrapper.vm.$router.push = stub
     wrapper.vm.form.username = 'sunny'
-    wrapper.vm.form.emailAddress = 'sunny@local'
+    wrapper.vm.form.emailAddress = 'sunny@taskagile.com'
     wrapper.vm.form.password = 'Jest!'
     wrapper.vm.submitForm()
     expect(registerSpy).toBeCalled()
@@ -104,7 +104,7 @@ describe('RegisterPage.vue', () => {
     const stub = jest.fn()
     wrapper.vm.$router.push = stub
     wrapper.vm.form.username = 'sunny'
-    wrapper.vm.form.emailAddress = 'sunny@local'
+    wrapper.vm.form.emailAddress = 'sunny@taskagile.com'
     wrapper.vm.form.password = 'JestRocks!'
     wrapper.vm.submitForm()
     expect(registerSpy).toBeCalled()
