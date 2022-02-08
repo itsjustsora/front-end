@@ -35,13 +35,20 @@
         <button class="btn btn-link" @click="createTeam()">+ {{ $t('homePage.createNewTeam') }}</button>
       </div>
     </div>
+    <CreateBoardModal
+      :teamId="selectedTeamId"
+      @created="onBoardCreated" />
+    <CreateTeamModal />
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
 import PageHeader from '@/components/PageHeader.vue'
+import CreateBoardModal from '@/modals/CreateBoardModal.vue'
+import CreateTeamModal from '@/modals/CreateTeamModal.vue'
 import { mapGetters } from 'vuex'
+
 export default {
   name: 'HomePage',
   data () {
@@ -57,6 +64,8 @@ export default {
   },
   components: {
     PageHeader,
+    CreateBoardModal,
+    CreateTeamModal,
   },
   methods: {
     openBoard (board) {

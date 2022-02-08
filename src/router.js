@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import HomePage from '@/views/HomePage'
 import LoginPage from '@/views/LoginPage'
 import RegisterPage from '@/views/RegisterPage'
-import HomePage from '@/views/HomePage'
+import BoardPage from '@/views/BoardPage'
 
 Vue.use(Router)
 
@@ -14,15 +14,17 @@ export default new Router({
     path: '/',
     name: 'home',
     component: HomePage
-  },
-  {
+  }, {
     path: '/login',
-    name: 'LoginPage',
+    name: 'login',
     component: LoginPage
-  },
-  {
+  }, {
     path: '/register',
-    name: 'RegisterPage',
-    component: RegisterPage,
-  }], 
-})                      
+    name: 'register',
+    component: RegisterPage
+  }, {
+    path: '/board/:boardId',
+    name: 'board',
+    component: BoardPage
+  }]
+})
